@@ -176,7 +176,7 @@ class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
         };
 
         // default webview will show doom face 0
-        webviewView.webview.html = this.getHtmlContent0(webviewView.webview);
+        webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ysay.jpeg")));
 
         // This is called every second is decides which doom face to show in the webview
         setInterval(() => {
@@ -195,42 +195,6 @@ class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
                 webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "saozcan.jpeg")));
             }
         }, 200);
-    }
-
-    // This is doom face 0
-    private getHtmlContent0(webview: vscode.Webview): string {
-        const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
-
-        const face0 = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "emakas.jpeg")));;
-
-        return ;
-    }
-
-    // This is doom face 1
-    private getHtmlContent1(webview: vscode.Webview): string {
-        const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
-
-        const face1 = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "incredible1.png"));
-
-        return getHtml(face1);
-    }
-
-    // This is doom face 2
-    private getHtmlContent2(webview: vscode.Webview): string {
-        const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
-
-        const face2 = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "incredible2.png"));
-
-        return getHtml(face2);
-    }
-
-    // This is doom face 3
-    private getHtmlContent3(webview: vscode.Webview): string {
-        const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
-
-        const face3 = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "incredible3.png"));
-
-        return getHtml(face3);
     }
 }
 
