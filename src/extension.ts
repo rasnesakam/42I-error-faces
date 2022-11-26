@@ -183,12 +183,12 @@ class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
             let errors = getNumErrors();
             if (errors === 0) {
                 webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ysay.jpeg")));
-            } else if (errors < 1) {
-                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ykimirti.jpeg")));
             } else if (errors < 2) {
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ykimirti.jpeg")));
+            } else if (errors < 3) {
                 webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "asahin.jpeg")));
             }
-			else if (errors < 3) {
+			else if (errors < 4) {
                 webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "emakas.jpeg")));
             }
 			else {
