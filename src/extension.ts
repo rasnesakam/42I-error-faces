@@ -182,24 +182,28 @@ class CustomSidebarViewProvider implements vscode.WebviewViewProvider {
         setInterval(() => {
             let errors = getNumErrors();
             if (errors === 0) {
-                webviewView.webview.html = this.getHtmlContent0(webviewView.webview);
-            } else if (errors < 5) {
-                webviewView.webview.html = this.getHtmlContent1(webviewView.webview);
-            } else if (errors < 10) {
-                webviewView.webview.html = this.getHtmlContent2(webviewView.webview);
-            } else {
-                webviewView.webview.html = this.getHtmlContent3(webviewView.webview);
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ysay.jpeg")));
+            } else if (errors < 1) {
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "ykimirti.jpeg")));
+            } else if (errors < 2) {
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "asahin.jpeg")));
             }
-        }, 1000);
+			else if (errors < 3) {
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "emakas.jpeg")));
+            }
+			else {
+                webviewView.webview.html = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "saozcan.jpeg")));
+            }
+        }, 200);
     }
 
     // This is doom face 0
     private getHtmlContent0(webview: vscode.Webview): string {
         const stylesheetUri = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "main.css"));
 
-        const face0 = webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "incredible0.png"));
+        const face0 = getHtml(webviewView.webview.asWebviewUri(vscode.Uri.joinPath(this._extensionUri, "assets", "emakas.jpeg")));;
 
-        return getHtml(face0);
+        return ;
     }
 
     // This is doom face 1
