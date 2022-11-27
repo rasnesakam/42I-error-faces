@@ -1,14 +1,14 @@
 {
-	"name": "in-your-face-incredible",
-	"displayName": "In Your Face",
-	"description": "In Your Face, shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!",
-	"version": "1.0.0",
-	"publisher": "TTOOWA",
-	"homepage": "https://github.com/ttoowa",
+	"name": "error-faces",
+	"displayName": "Error Faces",
+	"description": "error-faces, shows you Incredible 'Ouch Faces' that correlate to the number of errors in your code!",
+	"version": "1.0.1",
+	"publisher": "emakas",
+	"homepage": "https://github.com/rasnesakam",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/ttoowa/InYourFace_incredible"
+		"url": "https://github.com/rasnesakam"
 	},
 	"engines": {
 		"vscode": "^1.61.0"
@@ -16,7 +16,7 @@
 	"categories": [
 		"Visualization"
 	],
-	"icon": "assets/icon.png",
+	"icon": "assets/icon.jpeg",
 	"galleryBanner": {
 		"color": "#d69c27",
 		"theme": "dark"

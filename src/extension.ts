@@ -6,6 +6,7 @@
 // and more that I can't find anymore
 
 "use strict";
+import { allowedNodeEnvironmentFlags } from "process";
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from "vscode";
@@ -86,7 +87,6 @@ export function activate(context: vscode.ExtensionContext) {
         if (!activeTextEditor) {
             return;
         }
-
         // Many URIs can change - we only need to decorate the active text editor
         for (const uri of diagnosticChangeEvent.uris) {
             // Only update decorations for the active text editor.
